@@ -27,9 +27,7 @@ public class EmpWage implements wage {
     }
     
     public static void main(String[] args) {
-            
         EmpWage w=new EmpWage();
-        
         w.calEmpWage();
         
         }
