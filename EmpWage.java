@@ -25,18 +25,19 @@ public class EmpWage implements wage {
         double empCheck = Math.floor(Math.random()*10) % 2;
         
         System.out.println("Welcome to Employee Wage"+empCheck);
-        if (empCheck == IS_FULL_TIME){
-            System.out.println("Employee is present");
-            payment = WAGE_PER_HOUR*FULL_DAY_HOUR;
-            System.out.println("Full Time Employee payment :" + payment);
+             switch((int)empCheck){
+            case 1:
+                payment = WAGE_PER_HOUR*FULL_DAY_HOUR;
+                System.out.println("Full Time Employee payment :" + payment);
+                break;
+            case 0:
+                payment = WAGE_PER_HOUR*PART_TIME_HOUR;
+                System.out.println("Part Time Employee payment :" + payment);
+                break;
+            default:
+                System.out.println("Employee is Absent");
+             }
             
-        }
-        else if(IS_PART_TIME == empCheck){
-            payment = WAGE_PER_HOUR*PART_TIME_HOUR;
-            System.out.println("Part Time Employee payment :" + payment);
-        }
-        else
-            System.out.println("Employee is Absent");
     }
     
     public static void main(String[] args) {
