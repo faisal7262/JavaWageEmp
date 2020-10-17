@@ -25,10 +25,14 @@ public class EmpWage implements wage {
         int TOTAL_SALARY;
         int DAY_PER_MONTH=20;
         int TOTAL_EMP_HOUR=0;
+        int MAX_HRS_IN_MONTH=100;
         
+       int totalEmpHrs=0;
+       int totalWorkingDays=0;
        
         //double empCheck = Math.floor(Math.random()*10) % 2;
-        for(int i=1; i<=DAY_PER_MONTH; i++){
+      while(totalEmpHrs  < MAX_HRS_IN_MONTH && totalWorkingDays < DAY_PER_MONTH ){
+          totalWorkingDays++;
              Random r=new Random();
             int empCheck = r.nextInt((3-1)+1)+1;
         
@@ -43,14 +47,16 @@ public class EmpWage implements wage {
             default:
                 System.out.println("Employee is Absent");
              }
-             
              TOTAL_EMP_HOUR=(TOTAL_EMP_HOUR+EMP_HOURS);
-             
-        }
+                     
+             }
             TOTAL_SALARY=TOTAL_EMP_HOUR*WAGE_PER_HOUR;
             System.out.println(TOTAL_SALARY);
+        }
+          
+        
              
-    }
+    
     
     public static void main(String[] args) {
         EmpWage w=new EmpWage();
